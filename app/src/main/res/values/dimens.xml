@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="padding_common_min">8dp</dimen>
+    <dimen name="padding_common_micro">4dp</dimen>
+    <dimen name="padding_common_default">16dp</dimen>
+    <dimen name="padding_common_max">24dp</dimen>
+</resources>
