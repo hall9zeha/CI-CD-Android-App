@@ -1,4 +1,4 @@
-package com.barryzeha.appci.view.viewModel
+package com.barryzeha.appci.viewModel
 
 import androidx.lifecycle.ViewModel
 
