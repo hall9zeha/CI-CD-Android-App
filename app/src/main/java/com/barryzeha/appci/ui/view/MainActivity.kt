@@ -20,8 +20,14 @@ class MainActivity : AppCompatActivity() {
         setContentView(bind.root)
         getQuotes()
         setUpObserver()
+        setUpListener()
     }
 
+    private fun setUpListener(){
+        bind.root.setOnClickListener{
+            viewModel.getQuotesZen("random")
+        }
+    }
     private fun getQuotes(){
         viewModel.getQuotesZen("quotes")
     }
@@ -38,4 +44,5 @@ class MainActivity : AppCompatActivity() {
         bind.tvAuthor.text=String.format("\"%s\"",quote.author)
 
     }
+
 }
