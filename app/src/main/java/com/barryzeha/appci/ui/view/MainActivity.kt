@@ -36,5 +36,6 @@ class MainActivity : AppCompatActivity() {
     private fun setQuoteInViews(quote:QuotesZen){
         bind.tvQuote.text=quote.quote
         bind.tvAuthor.text=String.format("\"%s\"",quote.author)
+
     }
 }
