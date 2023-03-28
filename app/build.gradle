@@ -22,12 +22,12 @@ def coroutine_version = "1.6.1"
 def fragment_version = "1.5.5"
 android {
     namespace 'com.barryzeha.appci'
-    compileSdk 32
+    compileSdk 33
 
     defaultConfig {
         applicationId "com.barryzeha.appci"
         minSdk 21
-        targetSdk 32
+        targetSdk 33
         versionCode 1
         versionName "1.0"
 
