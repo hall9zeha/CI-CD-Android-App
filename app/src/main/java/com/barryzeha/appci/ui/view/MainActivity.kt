@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.util.Log
 import androidx.activity.viewModels
 import com.barryzeha.appci.databinding.ActivityMainBinding
+import com.barryzeha.appci.domain.model.QuotesZen
 import com.barryzeha.appci.ui.viewmodel.MainViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -26,7 +27,15 @@ class MainActivity : AppCompatActivity() {
     }
     private fun setUpObserver(){
         viewModel.quotesList.observe(this){
-            Log.d("QUOTES", it.toString())
+            it.let{list->
+                setQuoteInViews(list.random())
+            }
         }
+    }
+
+    private fun setQuoteInViews(quote:QuotesZen){
+        bind.tvQuote.text=quote.quote
+        bind.tvAuthor.text=String.format("\"%s\"",quote.author)
+
     }
 }
