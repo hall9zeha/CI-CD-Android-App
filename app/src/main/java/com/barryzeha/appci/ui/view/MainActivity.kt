@@ -7,6 +7,7 @@ import android.text.Html
 import android.util.Log
 import androidx.activity.viewModels
 import androidx.annotation.RequiresApi
+import com.barryzeha.appci.common.Constants
 import com.barryzeha.appci.databinding.ActivityMainBinding
 import com.barryzeha.appci.domain.model.QuotesZen
 import com.barryzeha.appci.ui.viewmodel.MainViewModel
@@ -32,7 +33,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
     private fun getQuotes(){
-       viewModel.getQuotesZen("quotes")
+       viewModel.getQuotesZen(Constants.QUOTES_MODE)
     }
     private fun setUpObserver(){
         viewModel.quote.observe(this){quote->
