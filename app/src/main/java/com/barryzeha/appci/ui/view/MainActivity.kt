@@ -18,30 +18,28 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         bind= ActivityMainBinding.inflate(layoutInflater)
         setContentView(bind.root)
-        getQuotes()
         setUpObserver()
+        getQuotes()
         setUpListener()
     }
 
     private fun setUpListener(){
         bind.root.setOnClickListener{
-            viewModel.getQuotesZen("random")
+            viewModel.getRandomQuote()
         }
     }
     private fun getQuotes(){
-        viewModel.getQuotesZen("quotes")
+       viewModel.getQuotesZen("quotes")
     }
     private fun setUpObserver(){
-        viewModel.quotesList.observe(this){
-            it.let{list->
-                setQuoteInViews(list.random())
-            }
+        viewModel.quote.observe(this){quote->
+            setQuoteInViews(quote)
         }
     }
 
-    private fun setQuoteInViews(quote:QuotesZen){
-        bind.tvQuote.text=quote.quote
-        bind.tvAuthor.text=String.format("\"%s\"",quote.author)
+    private fun setQuoteInViews(quote:QuotesZen) {
+        bind.tvQuote.text = quote.quote
+        bind.tvAuthor.text = String.format("\"%s\"", quote.author)
 
     }
 
