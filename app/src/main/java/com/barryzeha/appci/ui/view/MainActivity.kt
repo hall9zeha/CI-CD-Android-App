@@ -1,9 +1,12 @@
 package com.barryzeha.appci.ui.view
 
+import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.text.Html
 import android.util.Log
 import androidx.activity.viewModels
+import androidx.annotation.RequiresApi
 import com.barryzeha.appci.databinding.ActivityMainBinding
 import com.barryzeha.appci.domain.model.QuotesZen
 import com.barryzeha.appci.ui.viewmodel.MainViewModel
@@ -38,8 +41,12 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun setQuoteInViews(quote:QuotesZen) {
-        bind.tvQuote.text = quote.quote
-        bind.tvAuthor.text = String.format("\"%s\"", quote.author)
+        if(Build.VERSION.SDK_INT >=Build.VERSION_CODES.N) {
+            bind.tvQuote.text = Html.fromHtml(quote.preFormat, Html.FROM_HTML_MODE_LEGACY)
+        }else {
+            bind.tvQuote.text = quote.quote
+            bind.tvAuthor.text = String.format("\"%s\"", quote.author)
+        }
 
     }
 
