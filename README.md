@@ -1,7 +1,8 @@
 # CI-CD-Android-App
 Aplicación Android escrita en lenguaje Kotlin,utilizando el patrón de arquitectura MVVM, Clean Code e  (CI)Integración contínua.
+La aplicación muestra frases aleatorias traidas desde la API [ZenQuotes](https://docs.zenquotes.io/zenquotes-documentation/)
 
-#Se Utilizó :gear:
+# Se Utilizó :gear:
 
 
 * [Room database](https://developer.android.com/jetpack/androidx/releases/room?gclid=EAIaIQobChMIh-Hoi7C_-gIVRxXUAR2kZAAsEAAYASAAEgJnivD_BwE&gclsrc=aw.ds)
@@ -13,6 +14,9 @@ Aplicación Android escrita en lenguaje Kotlin,utilizando el patrón de arquitec
 * [Mockk para tests en Kotlin](https://mockk.io/)
 * [Coroutines for tests](https://developer.android.com/kotlin/coroutines/test?hl=es-419)
 
+# Archivos de configuracion CI
 
+* [CI file config](https://github.com/hall9zeha/CI-CD-Android-App/blob/main/.github/workflows/ci.yml)
+* [CI Testing file config](https://github.com/hall9zeha/CI-CD-Android-App/blob/main/.github/workflows/androidTesting.yml)
 
 
