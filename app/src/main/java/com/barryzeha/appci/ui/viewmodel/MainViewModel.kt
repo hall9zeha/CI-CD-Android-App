@@ -16,6 +16,8 @@ class MainViewModel @Inject constructor(private val usesCase: QuotesInteractor):
 
     private var _quote: MutableLiveData<QuotesZen> = MutableLiveData()
     val quote get() = _quote
+    private var _loading:MutableLiveData<Boolean> = MutableLiveData(false)
+    val loading get() = _loading
 
 
     fun getQuotesZen(mode:String){
@@ -24,6 +26,7 @@ class MainViewModel @Inject constructor(private val usesCase: QuotesInteractor):
             if(!quotesList.isNullOrEmpty()){
                 val randomIndex= (quotesList.indices).random()
                 _quote.postValue(quotesList[randomIndex])
+                _loading.postValue(true)
             }
         }
     }
