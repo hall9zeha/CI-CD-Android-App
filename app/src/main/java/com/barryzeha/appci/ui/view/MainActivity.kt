@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Html
 import android.util.Log
+import android.view.View
 import androidx.activity.viewModels
 import androidx.annotation.RequiresApi
 import com.barryzeha.appci.common.Constants
@@ -38,6 +39,9 @@ class MainActivity : AppCompatActivity() {
     private fun setUpObserver(){
         viewModel.quote.observe(this){quote->
             setQuoteInViews(quote)
+        }
+        viewModel.loading.observe(this){
+            if(it)bind.pbLoading.visibility=View.GONE
         }
     }
 
