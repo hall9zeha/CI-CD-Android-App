@@ -1,4 +1,4 @@
-# CI-CD-Android-App
+# CI-CD-Android-App ![Build status](https://github.com/wallabag/android-app/workflows/CI/badge.svg?branch=master)
 Aplicación Android escrita en lenguaje Kotlin,utilizando el patrón de arquitectura MVVM, Clean Code e  (CI)Integración contínua.
 La aplicación muestra frases aleatorias traidas desde la API [ZenQuotes](https://docs.zenquotes.io/zenquotes-documentation/)
 
